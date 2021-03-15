@@ -1,3 +1,4 @@
+namespace: flask-demo-envfile-in-pip-c
 configMapGenerator:
 - name: flask-demo-envfile-in-pip-c-master-env
   literals:
