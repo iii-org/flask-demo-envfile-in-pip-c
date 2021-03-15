@@ -1,7 +1,8 @@
 configMapGenerator:
-- envs:
-  - app.env
-  name: flask-demo-envfile-in-pip-c-master-env
+- name: flask-demo-envfile-in-pip-c-master-env
+  literals:
+  - FOO=Bar
+  - Bear=Bear
 #configMapGenerator:
 #- name: flask-demo-envfile-in-pip-c-master-env
 #  files:
