@@ -1,0 +1,4 @@
+configMapGenerator:
+- name: config
+  files:
+  - iiidevops/app.env
