@@ -18,6 +18,24 @@ stages:
         include:
         - master
         - develop
+  # 需要符合Rancher版本
+  - runScriptConfig:
+      image: iiiorg/rancher-cli:v2.4.6
+      shellScript: ${create-env-data}
+    env:
+      REPO_NAME: ${CICD_GIT_REPO_NAME}
+      BRANCH: ${CICD_GIT_BRANCH}
+    # Rancher管理授權連線
+    envFrom:
+    - sourceKey: API_TOKEN
+      sourceName: pipeline-api-key
+      targetKey: rancher_api_token
+    - sourceKey: rancher-url
+      sourceName: rancher
+      targetKey: rancher_url
+    - sourceKey: command
+      sourceName: pipeline-env-configmap
+      targetKey: create-env-data
 - name: Test--Checkmarx source code scan
   steps:
   - applyAppConfig:
