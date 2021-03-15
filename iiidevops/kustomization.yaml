@@ -3,6 +3,8 @@ configMapGenerator:
   literals:
   - FOO=Bar
   - Bear=Bear
+generatorOptions:
+  disableNameSuffixHash: true
 #configMapGenerator:
 #- name: flask-demo-envfile-in-pip-c-master-env
 #  files:
